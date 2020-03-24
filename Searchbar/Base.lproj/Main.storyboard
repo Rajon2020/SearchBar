@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Searchbar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="search to know ..." showsSearchResultsButton="YES" showsBookmarkButton="YES" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iWp-oy-CgR">
+                                <rect key="frame" x="0.0" y="325" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="aLp-GK-hcB"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RVm-OV-Kw8">
+                                <rect key="frame" x="0.0" y="369" width="414" height="527"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="527" id="yLp-zo-GbF"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="Nnq-cv-8pP">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nnq-cv-8pP" id="fWk-9D-Vxu">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="5RA-rT-MeL"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="LwA-nK-oYP"/>
+                                </connections>
+                            </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="B" translatesAutoresizingMaskIntoConstraints="NO" id="rWe-nX-imr">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="318"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="318" id="bWE-PJ-Gtc"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rWe-nX-imr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0Xe-P8-Dun"/>
+                            <constraint firstItem="iWp-oy-CgR" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8gd-Rn-obf"/>
+                            <constraint firstItem="rWe-nX-imr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="K18-Jd-Pcv"/>
+                            <constraint firstItem="RVm-OV-Kw8" firstAttribute="top" secondItem="iWp-oy-CgR" secondAttribute="bottom" symbolic="YES" id="NUZ-Re-0Nh"/>
+                            <constraint firstItem="iWp-oy-CgR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="281" id="dri-SD-M9N"/>
+                            <constraint firstItem="iWp-oy-CgR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rlx-3z-KX4"/>
+                            <constraint firstItem="rWe-nX-imr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="v3d-P0-Ldv"/>
+                            <constraint firstItem="RVm-OV-Kw8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wYS-Rs-MvP"/>
+                            <constraint firstItem="RVm-OV-Kw8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xCX-48-Czh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="iWp-oy-CgR" id="eiL-km-Pyi"/>
+                        <outlet property="tableView" destination="RVm-OV-Kw8" id="80K-54-HbL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-65.217391304347828" y="102.45535714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="B" width="500" height="332"/>
+    </resources>
+</document>
